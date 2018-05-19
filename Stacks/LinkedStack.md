@@ -3,6 +3,13 @@
 ```haskell
 data LinkedStack a = Nil | Node a (LinkedStack a)
 ```
+```haskell
+instance (Show a) => Show (LinkedStack a) where
+	show s = "[" ++ showCustom s ++ "]"
+		where
+			showCustom (Node x s) = "" ++ show x ++ " > " ++ showCustom s
+			showCustom Nil = "/"
+```
 
 ## isEmpty
 ```haskell

@@ -5,10 +5,10 @@ module LinkedStack (
 data LinkedStack a = Nil | Node a (LinkedStack a)
 
 instance (Show a) => Show (LinkedStack a) where
-    show (Node x t) =  p x ++ show t
+    show s = "[" ++ showCustom s ++ "]"
         where
-            p a = "" ++ show x ++ " > "
-    show Nil  = "/"
+            showCustom (Node x s) = "" ++ show x ++ " > " ++ showCustom s
+            showCustom Nil = "/"
 
 isEmpty :: LinkedStack a -> Bool
 isEmpty Nil = True
