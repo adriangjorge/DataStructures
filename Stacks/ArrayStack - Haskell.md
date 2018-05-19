@@ -14,7 +14,7 @@ isEmpty _ = False
 ### size
 ```haskell
 size :: ArrayStack a -> Integer
-size xs = (toInteger.length) xs
+size = toInteger.length
 ```
 
 ### put
