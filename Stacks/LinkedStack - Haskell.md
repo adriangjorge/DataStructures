@@ -7,7 +7,7 @@ data LinkedStack a = Nil | Node a (LinkedStack a)
 instance (Show a) => Show (LinkedStack a) where
   show s = "[" ++ showCustom s ++ "]"
     where
-      showCustom (Node x s) = "" ++ show x ++ " > " ++ showCustom s
+      showCustom (Node x s) = show x ++ " > " ++ showCustom s
       showCustom Nil = "/"
 ```
 
