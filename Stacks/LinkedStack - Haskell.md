@@ -13,34 +13,34 @@ instance (Show a) => Show (LinkedStack a) where
       showCustom Nil = "/"
 ```
 
-## isEmpty
+### isEmpty
 ```haskell
 isEmpty :: LinkedStack a -> Bool
 isEmpty Nil = True
 isEmpty _ = False
 ```
 
-## size
+### size
 ```haskell
 size :: LinkedStack a -> Integer
 size (Node _ t) = 1 + size t
 size Nil = 0
 ```
 
-## put
+### put
 ```haskell
 put :: a -> LinkedStack a -> LinkedStack a
 put x s = Node x s
 ```
 
-## top
+### top
 ```haskell
 top :: LinkedStack a -> a
 top (Node x _) = x
 top Nil = error "Empty stack"
 ```
 
-## pop
+### pop
 ```haskell
 pop :: LinkedStack a -> LinkedStack a
 pop (Node _ t) = t
