@@ -41,6 +41,7 @@ top Nil = error "Empty stack"
 ```
 
 ### pop
+It removes the top element from the collection.
 ```haskell
 pop :: LinkedStack a -> LinkedStack a
 pop (Node _ t) = t
